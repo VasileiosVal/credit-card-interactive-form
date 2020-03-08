@@ -17,13 +17,15 @@
 }
 
 .card-placeholder {
-  width: 80%;
+  width: 100%;
+  max-width: 450px;
   min-width: 100px;
   height: 270px;
   border-radius: 10px;
   position: relative;
   top: 80px;
   margin-top: -40px;
+  box-shadow: 3px 3px 15px black;
 }
 
 .img1 {
@@ -35,6 +37,7 @@
 
 .card-form {
   width: 100%;
+  max-width: 650px;
   background-color: white;
   border-radius: 8px;
   display: flex;
@@ -56,7 +59,7 @@
 label {
   font-size: 0.9rem;
   color: rgb(26, 59, 93);
-  padding: 4px 0;
+  padding: 5px 0;
 }
 
 .input-element {
@@ -65,7 +68,28 @@ label {
   background: none;
   border-radius: 5px;
   box-shadow: none;
+  padding: 5px 15px;
+  font-size: 1rem;
+  color: rgb(49, 49, 49);
   border: 1px solid rgb(206, 214, 224);
+}
+
+.hover-faint {
+  transition: 0.3s all linear;
+}
+
+.input-element:focus,
+.select-element:focus,
+.submit-button:focus {
+  outline: none;
+  box-shadow: 0.2px 0.2px 5px rgb(107, 107, 107);
+  border: 1px solid rgb(70, 111, 224);
+}
+
+.input-element:hover,
+.select-element:hover,
+.submit-button:hover {
+  border: 1px solid rgb(79, 167, 240);
 }
 
 .inline-form-group {
@@ -94,6 +118,9 @@ label {
   border-radius: 5px;
   box-shadow: none;
   border: 1px solid rgb(206, 214, 224);
+  padding: 5px 15px;
+  font-size: 1rem;
+  color: rgb(49, 49, 49);
   -webkit-appearance: none;
 }
 
