@@ -3,7 +3,7 @@
   background: linear-gradient(rgb(164, 218, 238), rgb(190, 223, 235));
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 10px 0;
 }
 
 .card-container {
@@ -22,7 +22,8 @@
   height: 270px;
   border-radius: 10px;
   position: relative;
-  top: 50px;
+  top: 80px;
+  margin-top: -40px;
 }
 
 .img1 {
@@ -39,5 +40,73 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
+  box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+  border-radius: 10px;
+  padding: 120px 35px 35px 35px;
+}
+
+.form-group {
+  width: inherit;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 0.9rem;
+  color: rgb(26, 59, 93);
+  padding: 4px 0;
+}
+
+.input-element {
+  height: 50px;
+  width: inherit;
+  background: none;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid rgb(206, 214, 224);
+}
+
+.inline-form-group {
+  width: inherit;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.outer-select-group {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inner-select-group {
+  display: flex;
+  width: 100%;
+}
+
+.select-element {
+  flex: 1;
+  margin-right: 30px;
+  height: 50px;
+  background: none;
+  border-radius: 5px;
+  box-shadow: none;
+  border: 1px solid rgb(206, 214, 224);
+  -webkit-appearance: none;
+}
+
+.submit-group {
+  width: inherit;
+  margin: 30px 0 15px 0;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: rgb(18, 99, 190);
+  height: 55px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
 }
