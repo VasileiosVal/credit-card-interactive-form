@@ -1,21 +1,15 @@
-import React from 'react';
+import React from "react";
+import "./App.styles.scss";
 
 export const App: React.FC = () => (
-
-    <div className="App">
-      <header className="App-header">
-       
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <div className="app-container">
+    <div className="card-container">
+      <div className="card-placeholder img1"></div>
+      <div className="card-form">
+        <input type="text" value="one" />
+        <input type="text" value="one" />
+        <input type="text" value="one" />
+      </div>
     </div>
-  );
+  </div>
+);
