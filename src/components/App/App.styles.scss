@@ -29,10 +29,55 @@
 }
 
 .img1 {
-  background-image: url("../../assets/card-placeholder-1.jpeg");
+  background-image: url("../../assets/1.jpeg");
 }
 .img2 {
-  background-image: url("../../assets/card-placeholder-2.jpeg");
+  background-image: url("../../assets/2.jpeg");
+}
+.img3 {
+  background-image: url("../../assets/3.jpeg");
+}
+.img4 {
+  background-image: url("../../assets/4.jpeg");
+}
+.img5 {
+  background-image: url("../../assets/5.jpeg");
+}
+.img6 {
+  background-image: url("../../assets/6.jpeg");
+}
+.img7 {
+  background-image: url("../../assets/7.jpeg");
+}
+.img8 {
+  background-image: url("../../assets/8.jpeg");
+}
+.chip {
+  background-image: url("../../assets/chip.png");
+}
+.amex {
+  background-image: url("../../assets/amex.png");
+}
+.dinersclub {
+  background-image: url("../../assets/dinersclub.png");
+}
+.discover {
+  background-image: url("../../assets/discover.png");
+}
+.visa {
+  background-image: url("../../assets/visa.png");
+}
+.jcb {
+  background-image: url("../../assets/jcb.png");
+}
+.mastercard {
+  background-image: url("../../assets/mastercard.png");
+}
+.troy {
+  background-image: url("../../assets/troy.png");
+}
+.unionpay {
+  background-image: url("../../assets/unionpay.png");
 }
 
 .card-form {
@@ -111,17 +156,19 @@ label {
 }
 
 .select-element {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent url("../../assets/angle-down-arrow.png") no-repeat 92% 53%;
   flex: 1;
   margin-right: 30px;
   height: 50px;
-  background: none;
   border-radius: 5px;
   box-shadow: none;
   border: 1px solid rgb(206, 214, 224);
   padding: 5px 15px;
   font-size: 1rem;
   color: rgb(49, 49, 49);
-  -webkit-appearance: none;
 }
 
 .submit-group {
