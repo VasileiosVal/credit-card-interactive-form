@@ -1,0 +1,78 @@
+.cardPlaceholder {
+  width: 100%;
+  max-width: 450px;
+  min-width: 100px;
+  height: 270px;
+  border-radius: 10px;
+  position: relative;
+  top: 80px;
+  margin-top: -40px;
+  box-shadow: 3px 3px 15px black;
+  display: grid;
+  grid-template-areas:
+    "chip . . type"
+    "number number number number"
+    "name . . expire";
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+}
+
+.chip {
+  grid-area: "chip";
+  background: url("../../assets/chip.png") center/65% no-repeat;
+}
+
+.type {
+}
+
+.img1 {
+  background-image: url("../../assets/1.jpeg");
+}
+.img2 {
+  background-image: url("../../assets/2.jpeg");
+}
+.img3 {
+  background-image: url("../../assets/3.jpeg");
+}
+.img4 {
+  background-image: url("../../assets/4.jpeg");
+}
+.img5 {
+  background-image: url("../../assets/5.jpeg");
+}
+.img6 {
+  background-image: url("../../assets/6.jpeg");
+}
+.img7 {
+  background-image: url("../../assets/7.jpeg");
+}
+.img8 {
+  background-image: url("../../assets/8.jpeg");
+}
+.chip {
+  background-image: url("../../assets/chip.png");
+}
+.amex {
+  background-image: url("../../assets/amex.png");
+}
+.dinersclub {
+  background-image: url("../../assets/dinersclub.png");
+}
+.discover {
+  background-image: url("../../assets/discover.png");
+}
+.visa {
+  background-image: url("../../assets/visa.png");
+}
+.jcb {
+  background-image: url("../../assets/jcb.png");
+}
+.mastercard {
+  background-image: url("../../assets/mastercard.png");
+}
+.troy {
+  background-image: url("../../assets/troy.png");
+}
+.unionpay {
+  background-image: url("../../assets/unionpay.png");
+}

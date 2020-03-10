@@ -1,0 +1,43 @@
+.formGroup {
+  width: inherit;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: rgb(26, 59, 93);
+  padding: 5px 0;
+}
+
+.inputElement {
+  height: 50px;
+  width: inherit;
+  background: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 5px 15px;
+  font-size: 1rem;
+  color: rgb(49, 49, 49);
+  border: 1px solid rgb(206, 214, 224);
+}
+
+.hoverFaint {
+  transition: 0.3s all linear;
+}
+
+.inputElement:focus,
+.selectElement:focus,
+.submitButton:focus {
+  outline: none;
+  box-shadow: 0.2px 0.2px 5px rgb(107, 107, 107);
+  border: 1px solid rgb(70, 111, 224);
+}
+
+.inputElement:hover,
+.selectElement:hover,
+.submitButton:hover {
+  border: 1px solid rgb(79, 167, 240);
+}
