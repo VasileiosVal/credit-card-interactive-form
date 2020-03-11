@@ -1,8 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Card.module.scss";
 
-export const Card: React.FC = () => (
-  <div className={`${styles.cardPlaceholder} ${styles.img1}`}>
-    <div className={styles.chip}></div>
-  </div>
-);
+type SpanElementArray = React.ReactElement<HTMLSpanElement>[];
+
+export const Card: React.FC = () => {
+  const [numberHolder, setNumberHolder] = useState<string[]>([
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#"
+  ]);
+
+  const generateNumberHolder = (): SpanElementArray => {
+    const elementArr: SpanElementArray = [];
+    const arrayToHandle = [...numberHolder];
+    for (let i = 0; i < 4; i++) {
+      const quarterNumHolder = arrayToHandle.splice(0, 4);
+      const quarterElement = <div key={i}>{quarterNumHolder.join("")}</div>;
+      elementArr.push(quarterElement);
+    }
+    return elementArr;
+  };
+
+  return (
+    <div className={`${styles.cardPlaceholder} ${styles.img1}`}>
+      <div className={styles.chip}></div>
+      <div className={styles.type}></div>
+      <div className={styles.number}>
+        <div className={styles.numberHolder}>{generateNumberHolder()}</div>
+      </div>
+    </div>
+  );
+};

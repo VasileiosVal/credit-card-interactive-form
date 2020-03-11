@@ -13,16 +13,37 @@
     "chip . . type"
     "number number number number"
     "name . . expire";
-  grid-template-columns: auto;
-  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .chip {
-  grid-area: "chip";
+  grid-area: chip;
   background: url("../../assets/chip.png") center/65% no-repeat;
 }
 
 .type {
+  grid-area: type;
+  background: url("../../assets/mastercard.png") 20% 70%/70% no-repeat;
+}
+
+.number {
+  grid-area: number;
+  display: flex;
+  align-items: center;
+}
+
+.numberHolder {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  padding: 0 30px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.numberHolder:focus {
+  outline: none;
 }
 
 .img1 {
