@@ -42,6 +42,18 @@ export const Card: React.FC = () => {
       <div className={styles.number}>
         <div className={styles.numberHolder}>{generateNumberHolder()}</div>
       </div>
+      <div className={styles.nameContainer}>
+        <label className={styles.nameLabel} htmlFor="Card Holder">
+          Card Holder
+        </label>
+        <div className={styles.name}>Full Name</div>
+      </div>
+      <div className={styles.expireContainer}>
+        <label className={styles.nameLabel} htmlFor="Expires">
+          Expires
+        </label>
+        <div className={styles.expire}>MM/YY</div>
+      </div>
     </div>
   );
 };

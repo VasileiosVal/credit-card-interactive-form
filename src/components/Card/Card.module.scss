@@ -12,13 +12,14 @@
   grid-template-areas:
     "chip . . type"
     "number number number number"
-    "name . . expire";
+    "name name name expire";
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: 1fr;
 }
 
 .chip {
   grid-area: chip;
-  background: url("../../assets/chip.png") center/65% no-repeat;
+  background: url("../../assets/chip.png") 50% 60%/55% no-repeat;
 }
 
 .type {
@@ -36,64 +37,103 @@
   display: flex;
   flex: 1;
   justify-content: space-around;
-  padding: 0 30px;
+  padding: 15px 55px 0 8px;
   color: white;
   font-size: 1.5rem;
-  font-weight: bold;
 }
 
 .numberHolder:focus {
   outline: none;
 }
 
+.nameContainer {
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 25px;
+}
+
+.nameLabel {
+  color: white;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.name {
+  color: white;
+  font-size: 1.05rem;
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.expireContainer {
+  grid-area: expire;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expire {
+  color: white;
+  font-size: 1.05rem;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+$gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+
 .img1 {
-  background-image: url("../../assets/1.jpeg");
+  background-image: $gradient, url("../../assets/1.jpeg");
 }
 .img2 {
-  background-image: url("../../assets/2.jpeg");
+  background-image: $gradient, url("../../assets/2.jpeg");
 }
 .img3 {
-  background-image: url("../../assets/3.jpeg");
+  background-image: $gradient, url("../../assets/3.jpeg");
 }
 .img4 {
-  background-image: url("../../assets/4.jpeg");
+  background-image: $gradient, url("../../assets/4.jpeg");
 }
 .img5 {
-  background-image: url("../../assets/5.jpeg");
+  background-image: $gradient, url("../../assets/5.jpeg");
 }
 .img6 {
-  background-image: url("../../assets/6.jpeg");
+  background-image: $gradient, url("../../assets/6.jpeg");
 }
 .img7 {
-  background-image: url("../../assets/7.jpeg");
+  background-image: $gradient, url("../../assets/7.jpeg");
 }
 .img8 {
-  background-image: url("../../assets/8.jpeg");
+  background-image: $gradient, url("../../assets/8.jpeg");
 }
 .chip {
-  background-image: url("../../assets/chip.png");
+  background-image: $gradient, url("../../assets/chip.png");
 }
 .amex {
-  background-image: url("../../assets/amex.png");
+  background-image: $gradient, url("../../assets/amex.png");
 }
 .dinersclub {
-  background-image: url("../../assets/dinersclub.png");
+  background-image: $gradient, url("../../assets/dinersclub.png");
 }
 .discover {
-  background-image: url("../../assets/discover.png");
+  background-image: $gradient, url("../../assets/discover.png");
 }
 .visa {
-  background-image: url("../../assets/visa.png");
+  background-image: $gradient, url("../../assets/visa.png");
 }
 .jcb {
-  background-image: url("../../assets/jcb.png");
+  background-image: $gradient, url("../../assets/jcb.png");
 }
 .mastercard {
-  background-image: url("../../assets/mastercard.png");
+  background-image: $gradient, url("../../assets/mastercard.png");
 }
 .troy {
-  background-image: url("../../assets/troy.png");
+  background-image: $gradient, url("../../assets/troy.png");
 }
 .unionpay {
-  background-image: url("../../assets/unionpay.png");
+  background-image: $gradient, url("../../assets/unionpay.png");
 }
