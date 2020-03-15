@@ -6,12 +6,6 @@
   align-items: flex-start;
 }
 
-.label {
-  font-size: 0.9rem;
-  color: rgb(26, 59, 93);
-  padding: 5px 0;
-}
-
 .inputElement {
   height: 50px;
   width: inherit;
@@ -24,16 +18,32 @@
   border: 1px solid rgb(206, 214, 224);
 }
 
-.hoverFaint {
-  transition: 0.3s all linear;
+.submitGroup {
+  width: inherit;
+  margin: 30px 0 15px 0;
 }
 
-.inputElement:focus {
+.submitButton {
+  width: 100%;
+  background-color: rgb(18, 99, 190);
+  height: 55px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.inputElement:focus,
+.submitButton:focus {
   outline: none;
   box-shadow: 0.2px 0.2px 5px rgb(107, 107, 107);
   border: 1px solid rgb(70, 111, 224);
 }
 
-.inputElement:hover {
+.inputElement:hover,
+.submitButton:hover {
   border: 1px solid rgb(79, 167, 240);
+}
+
+.hoverFaint {
+  transition: 0.3s all linear;
 }

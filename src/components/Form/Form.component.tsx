@@ -1,49 +1,87 @@
 import React from "react";
-import { Input } from "../Input/Input.component";
-import { Select } from "../Select/Select.component";
+import { Input } from "../reusable/Input/Input.component";
+import { Select } from "../reusable/Select/Select.component";
+import { Label } from "../reusable/Label/Label.component";
 import styles from "./Form.module.scss";
+
+// *** think of new place
+const monthNumbers = [
+  "Month",
+  ...[...Array(12).keys()].map(val => `${val + 1}`)
+];
+
+const yearNumbers = [
+  "Year",
+  ...[...Array(10).keys()].map(val => `${new Date().getFullYear() + val}`)
+];
+//***
 
 export const Form: React.FC = () => (
   <div className={styles.cardForm}>
     <Input
       label="Card Number"
       name="number"
-      value="number"
+      value=""
       onChange={() => {}}
+      onBlur={() => {}}
+      onFocus={() => {}}
+      addContainerStyles={["formGroup"]}
+      addLabelStyles={["label"]}
+      addInputStyles={["inputElement", "hoverFaint"]}
     />
-    <Input label="Card Holder" name="name" value="name" onChange={() => {}} />
+    <Input
+      label="Card Holder"
+      name="name"
+      value=""
+      onChange={() => {}}
+      onBlur={() => {}}
+      onFocus={() => {}}
+      addContainerStyles={["formGroup"]}
+      addLabelStyles={["label"]}
+      addInputStyles={["inputElement", "hoverFaint"]}
+    />
     <div className={styles.inlineFormGroup}>
       <div className={styles.outerSelectGroup}>
-        <label className={styles.label} htmlFor="Expiration Date">
-          Expiration Date
-        </label>
+        <Label label="Expiration Date" addLabelStyles={["label"]} />
         <div className={styles.innerSelectGroup}>
           <Select
             name="month"
-            value="month"
+            value="Month"
             onChange={() => {}}
-            data={[<option value="">Month</option>]}
+            onBlur={() => {}}
+            onFocus={() => {}}
+            data={monthNumbers}
+            addSelectStyles={["selectElement", "hoverFaint"]}
           />
           <Select
-            name="day"
-            value="day"
+            name="year"
+            value="Year"
             onChange={() => {}}
-            data={[<option value="">Day</option>]}
+            onBlur={() => {}}
+            onFocus={() => {}}
+            data={yearNumbers}
+            addSelectStyles={["selectElement", "hoverFaint"]}
           />
         </div>
       </div>
       <Input
         label="CVV"
-        type="text"
         name="cvv"
-        value="cvv"
+        value=""
         onChange={() => {}}
+        onBlur={() => {}}
+        onFocus={() => {}}
+        addContainerStyles={["formGroup"]}
+        addLabelStyles={["label"]}
+        addInputStyles={["inputElement", "hoverFaint"]}
       />
     </div>
-    <div className={styles.submitGroup}>
-      <button className={`${styles.submitButton} ${styles.hoverFaint}`}>
-        Submit
-      </button>
-    </div>
+    <Input
+      type="button"
+      name="submit"
+      value="Submit"
+      addContainerStyles={["submitGroup"]}
+      addInputStyles={["submitButton", "hoverFaint"]}
+    />
   </div>
 );
