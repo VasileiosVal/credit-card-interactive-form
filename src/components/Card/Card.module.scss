@@ -16,6 +16,7 @@
   position: relative;
   transition: transform 1s ease-in-out;
   transform-style: preserve-3d;
+  transform: rotateY(180deg); //
 }
 
 .cardOuterContainer:hover .cardInnerContainer {
@@ -55,7 +56,6 @@
     ". . . type";
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
-  align-items: center;
   box-shadow: 3px 3px 15px black;
   border-radius: 10px;
   overflow: hidden;
@@ -65,14 +65,19 @@
   transform: rotateY(180deg);
 }
 
-.chip {
+.chipPlaceHolder {
   grid-area: chip;
-  background: url("../../assets/chip.png") 50% 60%/55% no-repeat;
+  background-position: 50% 60%;
+  background-size: 55%;
+  background-repeat: no-repeat;
 }
 
-.type {
+.typeHolder {
   grid-area: type;
-  background: url("../../assets/mastercard.png") 20% 70%/70% no-repeat;
+  background-position: 20% 70%;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  opacity: 0.9;
 }
 
 .number {
@@ -134,18 +139,43 @@
 
 .line {
   grid-area: line;
+  align-self: center;
   height: 55%;
-  margin-top: 10px;
+  margin-top: 5px;
   background-color: rgba(0, 0, 0, 0.85);
 }
 
 .cvvContainer {
+  grid-area: cvv;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 20px 10px 20px;
 }
 
 .cvvLabel {
+  color: white;
+  font-size: 0.9rem;
+  text-align: right;
+  margin: 0 10px 4px 0;
 }
 
 .cvvOutput {
+  border-radius: 5px;
+  height: 55%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.backTypeHolder {
+  grid-area: type;
+  background-position: 55% 30%;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  opacity: 0.8;
 }
 
 $gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
@@ -175,29 +205,29 @@ $gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   background-image: $gradient, url("../../assets/8.jpeg");
 }
 .chip {
-  background-image: $gradient, url("../../assets/chip.png");
+  background-image: url("../../assets/chip.png");
 }
 .amex {
-  background-image: $gradient, url("../../assets/amex.png");
+  background-image: url("../../assets/amex.png");
 }
 .dinersclub {
-  background-image: $gradient, url("../../assets/dinersclub.png");
+  background-image: url("../../assets/dinersclub.png");
 }
 .discover {
-  background-image: $gradient, url("../../assets/discover.png");
+  background-image: url("../../assets/discover.png");
 }
 .visa {
-  background-image: $gradient, url("../../assets/visa.png");
+  background-image: url("../../assets/visa.png");
 }
 .jcb {
-  background-image: $gradient, url("../../assets/jcb.png");
+  background-image: url("../../assets/jcb.png");
 }
 .mastercard {
-  background-image: $gradient, url("../../assets/mastercard.png");
+  background-image: url("../../assets/mastercard.png");
 }
 .troy {
-  background-image: $gradient, url("../../assets/troy.png");
+  background-image: url("../../assets/troy.png");
 }
 .unionpay {
-  background-image: $gradient, url("../../assets/unionpay.png");
+  background-image: url("../../assets/unionpay.png");
 }

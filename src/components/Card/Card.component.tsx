@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Card.module.scss";
 
-type SpanElementArray = React.ReactElement<HTMLSpanElement>[];
+type SpanElementArray = React.ReactElement<HTMLDivElement>[];
 
 export const Card: React.FC = () => {
   const [numberHolder, setNumberHolder] = useState<string[]>([
@@ -39,8 +39,8 @@ export const Card: React.FC = () => {
     <div className={styles.cardOuterContainer}>
       <div className={`${styles.cardInnerContainer}`}>
         <div className={`${styles.frontCardPlaceholder} ${styles.img1}`}>
-          <div className={styles.chip}></div>
-          <div className={styles.type}></div>
+          <div className={`${styles.chip} ${styles.chipPlaceHolder}`}></div>
+          <div className={`${styles.typeHolder} ${styles.mastercard}`}></div>
           <div className={styles.number}>
             <div className={styles.numberHolder}>{generateNumberHolder()}</div>
           </div>
@@ -63,11 +63,13 @@ export const Card: React.FC = () => {
           <div className={styles.line}></div>
           <div className={styles.cvvContainer}>
             <label className={styles.cvvLabel} htmlFor="cvv">
-              cvv
+              CVV
             </label>
-            <div className={styles.cvvOutput}>***</div>
+            <div className={styles.cvvOutput}>553</div>
           </div>
-          <div className={styles.type}></div>
+          <div
+            className={`${styles.backTypeHolder} ${styles.mastercard}`}
+          ></div>
         </div>
       </div>
     </div>
