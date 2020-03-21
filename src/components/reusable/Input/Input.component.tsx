@@ -2,13 +2,14 @@ import React from "react";
 import { Label } from "../Label/Label.component";
 import { applyClasses } from "../../../utils/helperFunctions";
 import styles from "./Input.module.scss";
+import { formEl } from "../../../stores/cardInfo/infoStore";
 
 interface Props {
   label?: string;
   type?: string;
   name: string;
   value: string;
-  onChange?: () => void;
+  onChange?: (e: formEl) => void;
   onBlur?: () => void;
   onFocus?: () => void;
   addContainerStyles?: string[];

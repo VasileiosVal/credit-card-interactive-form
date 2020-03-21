@@ -15,16 +15,17 @@ const Form: React.FC = () => {
     formMonth,
     formName,
     formNumber,
-    formYear
+    formYear,
+    handleChange
   } = infoStore;
 
   return (
     <div className={styles.cardForm}>
       <Input
         label="Card Number"
-        name="number"
+        name="formNumber"
         value={formNumber}
-        onChange={() => {}}
+        onChange={handleChange}
         onBlur={() => {}}
         onFocus={() => {}}
         addContainerStyles={["formGroup"]}
@@ -33,9 +34,9 @@ const Form: React.FC = () => {
       />
       <Input
         label="Card Holder"
-        name="name"
+        name="formName"
         value={formName}
-        onChange={() => {}}
+        onChange={handleChange}
         onBlur={() => {}}
         onFocus={() => {}}
         addContainerStyles={["formGroup"]}
@@ -47,20 +48,20 @@ const Form: React.FC = () => {
           <Label label="Expiration Date" addLabelStyles={["label"]} />
           <div className={styles.innerSelectGroup}>
             <Select
-              name="month"
+              name="formMonth"
               value={formMonth}
               disabled={months[0]}
-              onChange={() => {}}
+              onChange={handleChange}
               onBlur={() => {}}
               onFocus={() => {}}
               data={months}
               addSelectStyles={["selectElement", "hoverFaint"]}
             />
             <Select
-              name="year"
+              name="formYear"
               value={formYear}
               disabled={years[0]}
-              onChange={() => {}}
+              onChange={handleChange}
               onBlur={() => {}}
               onFocus={() => {}}
               data={years}
@@ -70,9 +71,9 @@ const Form: React.FC = () => {
         </div>
         <Input
           label="CVV"
-          name="cvv"
+          name="formCvv"
           value={formCvv}
-          onChange={() => {}}
+          onChange={handleChange}
           onBlur={() => {}}
           onFocus={() => {}}
           addContainerStyles={["formGroup"]}

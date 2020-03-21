@@ -1,6 +1,7 @@
 import React from "react";
 import { applyClasses } from "../../../utils/helperFunctions";
 import styles from "./Select.module.scss";
+import { formEl } from "../../../stores/cardInfo/infoStore";
 
 type genOptionType = (
   data: string[]
@@ -10,7 +11,7 @@ interface Props {
   name: string;
   value: string;
   disabled?: string;
-  onChange?: () => void;
+  onChange: (e: formEl) => void;
   onBlur?: () => void;
   onFocus?: () => void;
   data: string[];

@@ -1,5 +1,8 @@
+import React from "react";
 import { RootStore } from "../rootStore";
-import { observable } from "mobx";
+import { observable, action, computed } from "mobx";
+
+export type formEl = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 
 const monthNumbers = [
   "Month",
@@ -25,4 +28,41 @@ export class InfoStore {
   constructor(rootStore: RootStore) {
     this.rootStore = rootStore;
   }
+
+  @action handleChange = (e: formEl): void => {
+    const { name, value } = e.target;
+    const regx = /^-?[0-9]+$/;
+
+    switch (name) {
+      case "formNumber":
+        const actualCardNumbers = value.split("  ").join("");
+        if (
+          (regx.test(actualCardNumbers) || !actualCardNumbers) &&
+          !(actualCardNumbers.length > 16)
+        ) {
+          const div = actualCardNumbers.length / 4;
+          if (!div) {
+            this[name] = actualCardNumbers;
+          } else {
+            const calculatedField: string[] = [];
+            for (let i = 0; i < div; i++) {
+              calculatedField.push(actualCardNumbers.slice(i * 4, i * 4 + 4));
+            }
+            this[name] = calculatedField.join("  ");
+          }
+        }
+        break;
+      case "formName":
+      case "formMonth":
+      case "formYear":
+        this[name] = value;
+        break;
+
+      case "formCvv":
+        if ((regx.test(value) || !value) && !(value.length > 3)) {
+          this[name] = value;
+        }
+        break;
+    }
+  };
 }
