@@ -9,6 +9,7 @@ type genOptionType = (
 interface Props {
   name: string;
   value: string;
+  disabled?: string;
   onChange?: () => void;
   onBlur?: () => void;
   onFocus?: () => void;
@@ -20,12 +21,13 @@ const generateClasses = applyClasses(styles);
 
 export const Select: React.FC<Props> = ({
   data,
+  disabled = "",
   addSelectStyles = [],
   ...rest
 }) => {
   const generateOptionElements: genOptionType = givenData =>
     givenData.map(val => (
-      <option key={val} value={val}>
+      <option key={val} value={val} disabled={val === disabled}>
         {val}
       </option>
     ));
