@@ -1,0 +1,33 @@
+.numEnter {
+  animation-name: numberEnter;
+  animation-duration: 0.3s;
+}
+
+.numLeave {
+  animation-name: numberLeave;
+  animation-duration: 0.3s;
+}
+
+@keyframes numberEnter {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes numberLeave {
+  from {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
