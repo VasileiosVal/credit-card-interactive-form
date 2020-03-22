@@ -1,6 +1,5 @@
-import React from "react";
 import { RootStore } from "../rootStore";
-import { observable, action, computed } from "mobx";
+import { observable, action } from "mobx";
 
 export type formEl = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 
@@ -15,9 +14,10 @@ const yearNumbers = [
 ];
 
 export class InfoStore {
-  @observable months: string[] = [...monthNumbers];
-  @observable years: string[] = [...yearNumbers];
+  @observable monthOptions: string[] = [...monthNumbers];
+  @observable yearOptions: string[] = [...yearNumbers];
   @observable formNumber: string = "";
+  @observable trimmedFormNumber: string = "";
   @observable formName: string = "";
   @observable formMonth: string = "Month";
   @observable formYear: string = "Year";
@@ -40,18 +40,17 @@ export class InfoStore {
           (regx.test(actualCardNumbers) || !actualCardNumbers) &&
           !(actualCardNumbers.length > 16)
         ) {
+          const calculatedField: string[] = [];
           const div = actualCardNumbers.length / 4;
-          if (!div) {
-            this[name] = actualCardNumbers;
-          } else {
-            const calculatedField: string[] = [];
-            for (let i = 0; i < div; i++) {
-              calculatedField.push(actualCardNumbers.slice(i * 4, i * 4 + 4));
-            }
-            this[name] = calculatedField.join("  ");
+
+          for (let i = 0; i < div; i++) {
+            calculatedField.push(actualCardNumbers.slice(i * 4, i * 4 + 4));
           }
+          this[name] = calculatedField.join("  ");
+          this["trimmedFormNumber"] = calculatedField.join("");
         }
         break;
+
       case "formName":
       case "formMonth":
       case "formYear":
