@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "../Card/Card.component";
+import Card from "../Card/Card.component";
 import Form from "../Form/Form.component";
 import styles from "./App.module.scss";
 

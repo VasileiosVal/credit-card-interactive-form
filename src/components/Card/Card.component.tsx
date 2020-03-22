@@ -1,24 +1,37 @@
-import React, { useState, useMemo } from "react";
-import styles from "./Card.module.scss";
+import React, { useMemo, useContext } from "react";
+import { observer } from "mobx-react-lite";
+import RootContext, { RootStore } from "../../stores/rootStore";
 import { Label } from "../reusable/Label/Label.component";
+import { Letter } from "../reusable/Letter/Letter.component";
+import styles from "./Card.module.scss";
 
-type SpanElementArray = React.ReactElement<HTMLDivElement>[];
+type DivElement = React.ReactElement<HTMLDivElement>;
+type DivElementArray = DivElement[];
 
-export const Card: React.FC = () => {
-  const [numberHolder, setNumberHolder] = useState<string[]>(
-    Array(16).fill("#")
-  );
+const Card: React.FC = () => {
+  const { displayStore } = useContext<RootStore>(RootContext);
+  const { transformCardNumber } = displayStore;
 
-  const generateNumberHolder = useMemo((): SpanElementArray => {
-    const elementArr: SpanElementArray = [];
-    const arrayToHandle = [...numberHolder];
+  const renderCardNumber = useMemo(() => {
+    const elementArr: DivElementArray = [];
+
     for (let i = 0; i < 4; i++) {
-      const quarterNumHolder = arrayToHandle.splice(0, 4);
-      const quarterElement = <div key={i}>{quarterNumHolder.join("")}</div>;
+      const quarterNumHolder: DivElementArray = transformCardNumber
+        .slice(i * 4, i * 4 + 4)
+        .split("")
+        .map((value, i) => <Letter key={i} value={value} />);
+
+      const quarterElement: DivElement = (
+        <div className={styles.quarterHolder} key={i}>
+          {quarterNumHolder}
+        </div>
+      );
+
       elementArr.push(quarterElement);
     }
+
     return elementArr;
-  }, [numberHolder]);
+  }, [transformCardNumber]);
 
   const frontCard = useMemo(
     () => (
@@ -28,7 +41,7 @@ export const Card: React.FC = () => {
         <div className={`${styles.chipPlaceHolder} ${styles.chip}`}></div>
         <div className={`${styles.typeHolder} ${styles.mastercard}`}></div>
         <div className={styles.number}>
-          <div className={styles.numberHolder}>{generateNumberHolder}</div>
+          <div className={styles.numberHolder}>{renderCardNumber}</div>
         </div>
         <div className={styles.nameContainer}>
           <Label label="Card Holder" addLabelStyles={["nameLabel"]} />
@@ -40,7 +53,7 @@ export const Card: React.FC = () => {
         </div>
       </div>
     ),
-    [generateNumberHolder]
+    [renderCardNumber]
   );
 
   const backCard = useMemo(
@@ -68,3 +81,5 @@ export const Card: React.FC = () => {
     </div>
   );
 };
+
+export default observer(Card);

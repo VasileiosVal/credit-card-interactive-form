@@ -9,8 +9,8 @@ import styles from "./Form.module.scss";
 const Form: React.FC = () => {
   const { infoStore } = useContext<RootStore>(RootContext);
   const {
-    months,
-    years,
+    monthOptions,
+    yearOptions,
     formCvv,
     formMonth,
     formName,
@@ -50,21 +50,21 @@ const Form: React.FC = () => {
             <Select
               name="formMonth"
               value={formMonth}
-              disabled={months[0]}
+              disabled={monthOptions[0]}
               onChange={handleChange}
               onBlur={() => {}}
               onFocus={() => {}}
-              data={months}
+              data={monthOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
             />
             <Select
               name="formYear"
               value={formYear}
-              disabled={years[0]}
+              disabled={yearOptions[0]}
               onChange={handleChange}
               onBlur={() => {}}
               onFocus={() => {}}
-              data={years}
+              data={yearOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
             />
           </div>
