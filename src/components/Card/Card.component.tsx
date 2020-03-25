@@ -20,7 +20,9 @@ const Card: React.FC = () => {
     generateCardName,
     generateCardMonth,
     generateCardYear,
-    generateCardCvv
+    generateCardCvv,
+    applyFlip,
+    cardImg
   } = displayStore;
 
   const renderData = (param: string) => {
@@ -83,7 +85,7 @@ const Card: React.FC = () => {
 
   const frontCard = (
     <div
-      className={generateClasses(["cardPlaceholder", "frontCardGrid", "img1"])}
+      className={generateClasses(["cardPlaceholder", "frontCardGrid", cardImg])}
     >
       <div className={generateClasses(["chipPlaceHolder", "chip"])}></div>
       <div className={generateClasses(["typeHolder", "mastercard"])}></div>
@@ -110,8 +112,8 @@ const Card: React.FC = () => {
       className={generateClasses([
         "cardPlaceholder",
         "backCardGrid",
-        "img1",
-        "cardRotate"
+        "cardRotate",
+        cardImg
       ])}
     >
       <div className={styles.line}></div>
@@ -125,10 +127,7 @@ const Card: React.FC = () => {
 
   return (
     <div className={styles.cardOuterContainer}>
-      <div
-        className={`${styles.cardInnerContainer} ${!cardFrontDisplay &&
-          styles.isFlipped}`}
-      >
+      <div className={generateClasses(["cardInnerContainer", applyFlip])}>
         {frontCard}
         {backCard}
       </div>

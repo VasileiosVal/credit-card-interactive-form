@@ -1,6 +1,10 @@
 import { RootStore } from "../rootStore";
 import { observable, computed, action } from "mobx";
 
+const cardBackgroundGallery = Array(8)
+  .fill("img")
+  .map((val, i) => `${val}${i + 1}`);
+
 const initialHashCardDisplay: string = Array(16)
   .fill("#")
   .join("");
@@ -63,5 +67,13 @@ export class DisplayStore {
     return !cvv.length ? initialCvv : cvv;
   }
 
-  @action flipCard = () => {};
+  @computed get applyFlip() {
+    return !this.cardFrontDisplay ? "isFlipped" : "";
+  }
+
+  @computed get cardImg() {
+    return cardBackgroundGallery[
+      Math.floor(Math.random() * cardBackgroundGallery.length)
+    ];
+  }
 }
