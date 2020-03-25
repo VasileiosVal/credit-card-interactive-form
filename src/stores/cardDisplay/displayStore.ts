@@ -5,7 +5,11 @@ const initialHashCardDisplay: string = Array(16)
   .fill("#")
   .join("");
 
-const initialName = "Full Name";
+export const initialName = "Full Name";
+
+const initialMonth = "mm";
+
+const initialYear = "yy";
 
 export class DisplayStore {
   rootStore: RootStore;
@@ -14,7 +18,7 @@ export class DisplayStore {
     this.rootStore = rootStore;
   }
 
-  @computed get transformCardNumber() {
+  @computed get generateCardNumber() {
     const actualCardNumber = this.rootStore.infoStore.trimmedFormNumber;
 
     if (!actualCardNumber.length) return initialHashCardDisplay;
@@ -26,5 +30,27 @@ export class DisplayStore {
     );
     const evaluatedCardNumber = `${digits}${remainingHash}`;
     return evaluatedCardNumber;
+  }
+
+  @computed get generateCardName() {
+    const name = this.rootStore.infoStore.formName.trim();
+    if (!name.length) return initialName;
+
+    const evaluatedName = name
+      .split(" ")
+      .filter(val => val !== "")
+      .join(" ");
+
+    return evaluatedName;
+  }
+
+  @computed get generateCardMonth() {
+    const month = this.rootStore.infoStore.formMonth;
+    return month === "Month" ? initialMonth : month;
+  }
+
+  @computed get generateCardYear() {
+    const year = this.rootStore.infoStore.formYear;
+    return year === "Year" ? initialYear : year.slice(2, 4);
   }
 }
