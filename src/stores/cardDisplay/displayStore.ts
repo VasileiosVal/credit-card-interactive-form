@@ -1,5 +1,5 @@
 import { RootStore } from "../rootStore";
-import { observable, computed } from "mobx";
+import { observable, computed, action } from "mobx";
 
 const initialHashCardDisplay: string = Array(16)
   .fill("#")
@@ -12,6 +12,8 @@ const initialMonth = "mm";
 const initialYear = "yy";
 
 export class DisplayStore {
+  @observable cardFrontDisplay = true;
+
   rootStore: RootStore;
 
   constructor(rootStore: RootStore) {
@@ -53,4 +55,6 @@ export class DisplayStore {
     const year = this.rootStore.infoStore.formYear;
     return year === "Year" ? initialYear : year.slice(2, 4);
   }
+
+  @action flipCard = () => {};
 }

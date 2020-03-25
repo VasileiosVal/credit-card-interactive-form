@@ -4,10 +4,13 @@ import RootContext, { RootStore } from "../../stores/rootStore";
 import { Label } from "../reusable/Label/Label.component";
 import { Letter } from "../reusable/Letter/Letter.component";
 import { initialName } from "../../stores/cardDisplay/displayStore";
+import { applyClasses } from "../../utils/helperFunctions";
 import styles from "./Card.module.scss";
 
 type DivElement = React.ReactElement<HTMLDivElement>;
 type DivElementArray = DivElement[];
+
+const generateClasses = applyClasses(styles);
 
 const Card: React.FC = () => {
   const { displayStore } = useContext<RootStore>(RootContext);
@@ -76,10 +79,10 @@ const Card: React.FC = () => {
 
   const frontCard = (
     <div
-      className={`${styles.cardPlaceholder} ${styles.frontCardGrid} ${styles.img1}`}
+      className={generateClasses(["cardPlaceholder", "frontCardGrid", "img1"])}
     >
-      <div className={`${styles.chipPlaceHolder} ${styles.chip}`}></div>
-      <div className={`${styles.typeHolder} ${styles.mastercard}`}></div>
+      <div className={generateClasses(["chipPlaceHolder", "chip"])}></div>
+      <div className={generateClasses(["typeHolder", "mastercard"])}></div>
       <div className={styles.number}>
         <div className={styles.numberHolder}>{renderData("number")}</div>
       </div>
@@ -100,14 +103,19 @@ const Card: React.FC = () => {
 
   const backCard = (
     <div
-      className={`${styles.cardPlaceholder} ${styles.backCardGrid} ${styles.img1} ${styles.cardRotate}`}
+      className={generateClasses([
+        "cardPlaceholder",
+        "backCardGrid",
+        "img1",
+        "cardRotate"
+      ])}
     >
       <div className={styles.line}></div>
       <div className={styles.cvvContainer}>
         <Label label="CVV" addLabelStyles={["cvvLabel"]} />
         <div className={styles.cvvOutput}>553</div>
       </div>
-      <div className={`${styles.backTypeHolder} ${styles.mastercard}`}></div>
+      <div className={generateClasses(["backTypeHolder", "mastercard"])}></div>
     </div>
   );
 
