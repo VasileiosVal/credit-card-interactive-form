@@ -11,6 +11,8 @@ const initialMonth = "mm";
 
 const initialYear = "yy";
 
+const initialCvv = "***";
+
 export class DisplayStore {
   @observable cardFrontDisplay = true;
 
@@ -54,6 +56,11 @@ export class DisplayStore {
   @computed get generateCardYear() {
     const year = this.rootStore.infoStore.formYear;
     return year === "Year" ? initialYear : year.slice(2, 4);
+  }
+
+  @computed get generateCardCvv() {
+    const cvv = this.rootStore.infoStore.formCvv;
+    return !cvv.length ? initialCvv : cvv;
   }
 
   @action flipCard = () => {};

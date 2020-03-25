@@ -19,7 +19,8 @@ const Card: React.FC = () => {
     generateCardNumber,
     generateCardName,
     generateCardMonth,
-    generateCardYear
+    generateCardYear,
+    generateCardCvv
   } = displayStore;
 
   const renderData = (param: string) => {
@@ -32,6 +33,8 @@ const Card: React.FC = () => {
         return transformDate(generateCardMonth);
       case "year":
         return transformDate(generateCardYear);
+      case "cvv":
+        return transformName(generateCardCvv);
     }
   };
 
@@ -114,7 +117,7 @@ const Card: React.FC = () => {
       <div className={styles.line}></div>
       <div className={styles.cvvContainer}>
         <Label label="CVV" addLabelStyles={["cvvLabel"]} />
-        <div className={styles.cvvOutput}>553</div>
+        <div className={styles.cvvOutput}>{renderData("cvv")}</div>
       </div>
       <div className={generateClasses(["backTypeHolder", "mastercard"])}></div>
     </div>
