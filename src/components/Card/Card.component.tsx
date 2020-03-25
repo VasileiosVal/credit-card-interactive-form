@@ -15,6 +15,7 @@ const generateClasses = applyClasses(styles);
 const Card: React.FC = () => {
   const { displayStore } = useContext<RootStore>(RootContext);
   const {
+    cardFrontDisplay,
     generateCardNumber,
     generateCardName,
     generateCardMonth,
@@ -121,7 +122,10 @@ const Card: React.FC = () => {
 
   return (
     <div className={styles.cardOuterContainer}>
-      <div className={`${styles.cardInnerContainer}`}>
+      <div
+        className={`${styles.cardInnerContainer} ${!cardFrontDisplay &&
+          styles.isFlipped}`}
+      >
         {frontCard}
         {backCard}
       </div>

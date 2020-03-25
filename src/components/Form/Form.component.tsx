@@ -16,7 +16,8 @@ const Form: React.FC = () => {
     formName,
     formNumber,
     formYear,
-    handleChange
+    handleChange,
+    handleFocus
   } = infoStore;
 
   return (
@@ -27,7 +28,7 @@ const Form: React.FC = () => {
         value={formNumber}
         onChange={handleChange}
         onBlur={() => {}}
-        onFocus={() => {}}
+        onFocus={handleFocus}
         addContainerStyles={["formGroup"]}
         addLabelStyles={["label"]}
         addInputStyles={["inputElement", "hoverFaint"]}
@@ -38,7 +39,7 @@ const Form: React.FC = () => {
         value={formName}
         onChange={handleChange}
         onBlur={() => {}}
-        onFocus={() => {}}
+        onFocus={handleFocus}
         addContainerStyles={["formGroup"]}
         addLabelStyles={["label"]}
         addInputStyles={["inputElement", "hoverFaint"]}
@@ -53,7 +54,7 @@ const Form: React.FC = () => {
               disabled={monthOptions[0]}
               onChange={handleChange}
               onBlur={() => {}}
-              onFocus={() => {}}
+              onFocus={handleFocus}
               data={monthOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
             />
@@ -63,7 +64,7 @@ const Form: React.FC = () => {
               disabled={yearOptions[0]}
               onChange={handleChange}
               onBlur={() => {}}
-              onFocus={() => {}}
+              onFocus={handleFocus}
               data={yearOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
             />
@@ -75,7 +76,7 @@ const Form: React.FC = () => {
           value={formCvv}
           onChange={handleChange}
           onBlur={() => {}}
-          onFocus={() => {}}
+          onFocus={handleFocus}
           addContainerStyles={["formGroup"]}
           addLabelStyles={["label"]}
           addInputStyles={["inputElement", "hoverFaint"]}

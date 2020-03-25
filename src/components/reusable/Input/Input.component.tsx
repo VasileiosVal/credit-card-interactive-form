@@ -2,7 +2,7 @@ import React from "react";
 import { Label } from "../Label/Label.component";
 import { applyClasses } from "../../../utils/helperFunctions";
 import styles from "./Input.module.scss";
-import { formEl } from "../../../stores/cardInfo/infoStore";
+import { formEl, focusEl } from "../../../stores/cardInfo/infoStore";
 
 interface Props {
   label?: string;
@@ -10,8 +10,8 @@ interface Props {
   name: string;
   value: string;
   onChange?: (e: formEl) => void;
+  onFocus?: (e: focusEl) => void;
   onBlur?: () => void;
-  onFocus?: () => void;
   addContainerStyles?: string[];
   addLabelStyles?: string[];
   addInputStyles?: string[];

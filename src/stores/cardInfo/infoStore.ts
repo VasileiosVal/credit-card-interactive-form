@@ -3,6 +3,8 @@ import { observable, action } from "mobx";
 
 export type formEl = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 
+export type focusEl = React.FocusEvent<HTMLInputElement | HTMLSelectElement>;
+
 const monthNumbers = [
   "Month",
   ...[...Array(12).keys()].map(val => `${val + 1 <= 9 ? 0 : ""}${val + 1}`)
@@ -63,5 +65,10 @@ export class InfoStore {
         }
         break;
     }
+  };
+
+  @action handleFocus = (e: focusEl): void => {
+    const focusOnBackElement = e.target.name === "formCvv";
+    this.rootStore.displayStore.cardFrontDisplay = !focusOnBackElement;
   };
 }
