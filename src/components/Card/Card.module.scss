@@ -1,6 +1,6 @@
 .cardOuterContainer {
   width: 100%;
-  max-width: 450px;
+  max-width: 430px;
   min-width: 100px;
   height: 270px;
   position: relative;
@@ -83,7 +83,7 @@
   display: flex;
   flex: 1;
   justify-content: space-around;
-  padding: 15px 70px 0 8px;
+  padding: 15px 80px 0 10px;
   color: white;
   font-size: 1.5rem;
 }
@@ -106,6 +106,7 @@
 }
 
 .name {
+  display: flex;
   color: white;
   font-size: 1.05rem;
   margin-top: 4px;
@@ -121,6 +122,7 @@
 }
 
 .expire {
+  display: flex;
   color: white;
   font-size: 1.05rem;
   margin-top: 4px;
