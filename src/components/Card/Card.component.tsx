@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import RootContext, { RootStore } from "../../stores/rootStore";
 import { Label } from "../reusable/Label/Label.component";
@@ -13,6 +13,7 @@ type DivElementArray = DivElement[];
 const generateClasses = applyClasses(styles);
 
 const Card: React.FC = () => {
+  const [typeAnimation, setTypeAnimation] = useState("");
   const { displayStore } = useContext<RootStore>(RootContext);
   const {
     cardFrontDisplay,
@@ -22,8 +23,17 @@ const Card: React.FC = () => {
     generateCardYear,
     generateCardCvv,
     applyFlip,
-    cardImg
+    cardImg,
+    cardType
   } = displayStore;
+
+  useEffect(() => {
+    setTypeAnimation("valueEnter");
+  }, [cardType]);
+
+  useEffect(() => {
+    typeAnimation && setTimeout(() => setTypeAnimation(""), 400);
+  }, [typeAnimation]);
 
   const renderData = (param: string) => {
     switch (param) {
@@ -88,7 +98,9 @@ const Card: React.FC = () => {
       className={generateClasses(["cardPlaceholder", "frontCardGrid", cardImg])}
     >
       <div className={generateClasses(["chipPlaceHolder", "chip"])}></div>
-      <div className={generateClasses(["typeHolder", "mastercard"])}></div>
+      <div
+        className={generateClasses(["typeHolder", typeAnimation, cardType])}
+      ></div>
       <div className={styles.number}>
         <div className={styles.numberHolder}>{renderData("number")}</div>
       </div>
@@ -121,7 +133,7 @@ const Card: React.FC = () => {
         <Label label="CVV" addLabelStyles={["cvvLabel"]} />
         <div className={styles.cvvOutput}>{renderData("cvv")}</div>
       </div>
-      <div className={generateClasses(["backTypeHolder", "mastercard"])}></div>
+      <div className={generateClasses(["backTypeHolder", cardType])}></div>
     </div>
   );
 

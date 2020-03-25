@@ -76,4 +76,20 @@ export class DisplayStore {
       Math.floor(Math.random() * cardBackgroundGallery.length)
     ];
   }
+
+  @computed get cardType() {
+    const number = this.rootStore.infoStore.trimmedFormNumber;
+
+    return number.startsWith("4")
+      ? "visa"
+      : number.startsWith("62")
+      ? "unionpay"
+      : number.startsWith("6011")
+      ? "discover"
+      : number.startsWith("9792")
+      ? "troy"
+      : number.match(/^5[1-5]/)
+      ? "mastercard"
+      : "visa";
+  }
 }

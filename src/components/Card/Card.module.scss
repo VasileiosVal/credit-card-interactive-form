@@ -188,20 +188,11 @@ $gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 .chip {
   background-image: url("../../assets/chip.png");
 }
-.amex {
-  background-image: url("../../assets/amex.png");
-}
-.dinersclub {
-  background-image: url("../../assets/dinersclub.png");
-}
 .discover {
   background-image: url("../../assets/discover.png");
 }
 .visa {
   background-image: url("../../assets/visa.png");
-}
-.jcb {
-  background-image: url("../../assets/jcb.png");
 }
 .mastercard {
   background-image: url("../../assets/mastercard.png");
@@ -211,4 +202,21 @@ $gradient: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 .unionpay {
   background-image: url("../../assets/unionpay.png");
+}
+
+.valueEnter {
+  animation-name: valueEnter;
+  animation-duration: 0.3s;
+}
+
+@keyframes valueEnter {
+  from {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
