@@ -1,14 +1,19 @@
-.numEnter {
-  animation-name: numberEnter;
+.valueEnter {
+  animation-name: valueEnter;
   animation-duration: 0.3s;
 }
 
-.numLeave {
-  animation-name: numberLeave;
+.valueLeave {
+  animation-name: valueLeave;
   animation-duration: 0.3s;
 }
 
-@keyframes numberEnter {
+.valueJoinRight {
+  animation-name: valueJoinRight;
+  animation-duration: 0.3s;
+}
+
+@keyframes valueEnter {
   from {
     transform: translateY(-25px);
     opacity: 0;
@@ -20,9 +25,21 @@
   }
 }
 
-@keyframes numberLeave {
+@keyframes valueLeave {
   from {
     transform: translateY(25px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes valueJoinRight {
+  from {
+    transform: translateX(25px);
     opacity: 0;
   }
 
