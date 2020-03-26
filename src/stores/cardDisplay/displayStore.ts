@@ -1,5 +1,5 @@
 import { RootStore } from "../rootStore";
-import { observable, computed, action } from "mobx";
+import { observable, computed } from "mobx";
 
 const cardBackgroundGallery = Array(8)
   .fill("img")

@@ -5,6 +5,7 @@ import { Label } from "../reusable/Label/Label.component";
 import { Letter } from "../reusable/Letter/Letter.component";
 import { initialName } from "../../stores/cardDisplay/displayStore";
 import { applyClasses } from "../../utils/helperFunctions";
+import { useAnimation } from "../reusable/CustomHooks/useAnimation";
 import styles from "./Card.module.scss";
 
 type DivElement = React.ReactElement<HTMLDivElement>;
@@ -13,10 +14,8 @@ type DivElementArray = DivElement[];
 const generateClasses = applyClasses(styles);
 
 const Card: React.FC = () => {
-  const [typeAnimation, setTypeAnimation] = useState("");
   const { displayStore } = useContext<RootStore>(RootContext);
   const {
-    cardFrontDisplay,
     generateCardNumber,
     generateCardName,
     generateCardMonth,
@@ -27,13 +26,7 @@ const Card: React.FC = () => {
     cardType
   } = displayStore;
 
-  useEffect(() => {
-    setTypeAnimation("valueEnter");
-  }, [cardType]);
-
-  useEffect(() => {
-    typeAnimation && setTimeout(() => setTypeAnimation(""), 400);
-  }, [typeAnimation]);
+  const animation = useAnimation([cardType], "valueEnter");
 
   const renderData = (param: string) => {
     switch (param) {
@@ -99,7 +92,7 @@ const Card: React.FC = () => {
     >
       <div className={generateClasses(["chipPlaceHolder", "chip"])}></div>
       <div
-        className={generateClasses(["typeHolder", typeAnimation, cardType])}
+        className={generateClasses(["typeHolder", animation, cardType])}
       ></div>
       <div className={styles.number}>
         <div className={styles.numberHolder}>{renderData("number")}</div>

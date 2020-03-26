@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useAnimation } from "../CustomHooks/useAnimation";
 import styles from "./Letter.module.scss";
 
 interface Props {
@@ -7,8 +8,6 @@ interface Props {
 }
 
 export const Letter: React.FC<Props> = ({ value, animate }) => {
-  const [animation, setAnimation] = useState("");
-
   const animateClass = (value: string, animate: string) => {
     switch (animate) {
       case "number":
@@ -30,13 +29,7 @@ export const Letter: React.FC<Props> = ({ value, animate }) => {
     }
   };
 
-  useEffect(() => {
-    setAnimation(animateClass(value, animate));
-  }, [value, animate]);
-
-  useEffect(() => {
-    animation && setTimeout(() => setAnimation(""), 200);
-  }, [animation]);
+  const animation = useAnimation([value, animate], animateClass);
 
   return (
     <div className={animation}>
