@@ -11,7 +11,7 @@ interface Props {
   value: string;
   onChange?: (e: formEl) => void;
   onFocus?: (e: focusEl) => void;
-  onBlur?: () => void;
+  onBlur?: (e: focusEl) => void;
   addContainerStyles?: string[];
   addLabelStyles?: string[];
   addInputStyles?: string[];

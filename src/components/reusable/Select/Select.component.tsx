@@ -13,7 +13,7 @@ interface Props {
   disabled?: string;
   onChange?: (e: formEl) => void;
   onFocus?: (e: focusEl) => void;
-  onBlur?: () => void;
+  onBlur?: (e: focusEl) => void;
   data: string[];
   addSelectStyles?: string[];
 }

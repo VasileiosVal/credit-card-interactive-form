@@ -70,5 +70,6 @@ export class InfoStore {
   @action handleFocus = (e: focusEl): void => {
     const focusOnBackElement = e.target.name === "formCvv";
     this.rootStore.displayStore.cardFrontDisplay = !focusOnBackElement;
+    this.rootStore.displayStore.highlightOnFocus = e.target.name;
   };
 }

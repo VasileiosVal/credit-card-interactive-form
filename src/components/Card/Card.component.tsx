@@ -23,7 +23,8 @@ const Card: React.FC = () => {
     generateCardCvv,
     applyFlip,
     cardImg,
-    cardType
+    cardType,
+    elementHighlight
   } = displayStore;
 
   const animation = useAnimation([cardType], "valueEnter");
@@ -135,6 +136,9 @@ const Card: React.FC = () => {
       <div className={generateClasses(["cardInnerContainer", applyFlip])}>
         {frontCard}
         {backCard}
+        <div
+          className={generateClasses(["focusHighlight", elementHighlight])}
+        />
       </div>
     </div>
   );

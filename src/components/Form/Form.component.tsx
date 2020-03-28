@@ -27,7 +27,6 @@ const Form: React.FC = () => {
         name="formNumber"
         value={formNumber}
         onChange={handleChange}
-        onBlur={() => {}}
         onFocus={handleFocus}
         addContainerStyles={["formGroup"]}
         addLabelStyles={["label"]}
@@ -38,7 +37,6 @@ const Form: React.FC = () => {
         name="formName"
         value={formName}
         onChange={handleChange}
-        onBlur={() => {}}
         onFocus={handleFocus}
         addContainerStyles={["formGroup"]}
         addLabelStyles={["label"]}
@@ -53,7 +51,6 @@ const Form: React.FC = () => {
               value={formMonth}
               disabled={monthOptions[0]}
               onChange={handleChange}
-              onBlur={() => {}}
               onFocus={handleFocus}
               data={monthOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
@@ -63,7 +60,6 @@ const Form: React.FC = () => {
               value={formYear}
               disabled={yearOptions[0]}
               onChange={handleChange}
-              onBlur={() => {}}
               onFocus={handleFocus}
               data={yearOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
@@ -75,7 +71,6 @@ const Form: React.FC = () => {
           name="formCvv"
           value={formCvv}
           onChange={handleChange}
-          onBlur={() => {}}
           onFocus={handleFocus}
           addContainerStyles={["formGroup"]}
           addLabelStyles={["label"]}

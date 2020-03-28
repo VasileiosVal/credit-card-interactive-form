@@ -19,6 +19,7 @@ const initialCvv = "***";
 
 export class DisplayStore {
   @observable cardFrontDisplay = true;
+  @observable highlightOnFocus: string = "formGlobal";
 
   rootStore: RootStore;
 
@@ -91,5 +92,13 @@ export class DisplayStore {
       : number.match(/^5[1-5]/)
       ? "mastercard"
       : "visa";
+  }
+
+  @computed get elementHighlight() {
+    return ["formMonth", "formYear"].includes(this.highlightOnFocus)
+      ? "formDate"
+      : this.highlightOnFocus === "formCvv"
+      ? ""
+      : this.highlightOnFocus;
   }
 }
