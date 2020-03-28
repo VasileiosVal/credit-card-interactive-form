@@ -1,9 +1,6 @@
 import { RootStore } from "../rootStore";
 import { observable, action } from "mobx";
-
-export type formEl = React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
-
-export type focusEl = React.FocusEvent<HTMLInputElement | HTMLSelectElement>;
+import { formEl, focusEl } from "../../utils/reusableTypes";
 
 const monthNumbers = [
   "Month",

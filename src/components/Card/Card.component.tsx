@@ -6,10 +6,9 @@ import { Letter } from "../reusable/Letter/Letter.component";
 import { initialName } from "../../stores/cardDisplay/displayStore";
 import { applyClasses } from "../../utils/helperFunctions";
 import { useAnimation } from "../reusable/CustomHooks/useAnimation";
+import { DivElement } from "../../utils/reusableTypes";
+import { DivElementArray } from "../../utils/reusableTypes";
 import styles from "./Card.module.scss";
-
-type DivElement = React.ReactElement<HTMLDivElement>;
-type DivElementArray = DivElement[];
 
 const generateClasses = applyClasses(styles);
 

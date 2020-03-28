@@ -4,11 +4,8 @@ import { Input } from "../reusable/Input/Input.component";
 import { Select } from "../reusable/Select/Select.component";
 import { Label } from "../reusable/Label/Label.component";
 import RootContext, { RootStore } from "../../stores/rootStore";
+import { inputMouseType } from "../../utils/reusableTypes";
 import styles from "./Form.module.scss";
-
-export type inputMouseType = React.MouseEvent<
-  HTMLInputElement | HTMLSelectElement
->;
 
 const Form: React.FC = () => {
   const { infoStore } = useContext<RootStore>(RootContext);

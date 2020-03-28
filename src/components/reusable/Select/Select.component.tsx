@@ -1,8 +1,7 @@
 import React from "react";
 import { applyClasses } from "../../../utils/helperFunctions";
 import styles from "./Select.module.scss";
-import { formEl, focusEl } from "../../../stores/cardInfo/infoStore";
-import { inputMouseType } from "../../Form/Form.component";
+import { formEl, focusEl, inputMouseType } from "../../../utils/reusableTypes";
 
 type genOptionType = (
   data: string[]

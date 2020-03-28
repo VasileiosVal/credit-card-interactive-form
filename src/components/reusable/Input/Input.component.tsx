@@ -2,8 +2,7 @@ import React from "react";
 import { Label } from "../Label/Label.component";
 import { applyClasses } from "../../../utils/helperFunctions";
 import styles from "./Input.module.scss";
-import { formEl, focusEl } from "../../../stores/cardInfo/infoStore";
-import { inputMouseType } from "../../Form/Form.component";
+import { formEl, focusEl, inputMouseType } from "../../../utils/reusableTypes";
 
 interface Props {
   label?: string;
