@@ -72,4 +72,8 @@ export class InfoStore {
     this.rootStore.displayStore.cardFrontDisplay = !focusOnBackElement;
     this.rootStore.displayStore.highlightOnFocus = e.target.name;
   };
+
+  @action resetGlobalHighlight = () => {
+    this.rootStore.displayStore.highlightOnFocus = "formGlobal";
+  };
 }

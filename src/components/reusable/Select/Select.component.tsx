@@ -2,6 +2,7 @@ import React from "react";
 import { applyClasses } from "../../../utils/helperFunctions";
 import styles from "./Select.module.scss";
 import { formEl, focusEl } from "../../../stores/cardInfo/infoStore";
+import { inputMouseType } from "../../Form/Form.component";
 
 type genOptionType = (
   data: string[]
@@ -11,6 +12,7 @@ interface Props {
   name: string;
   value: string;
   disabled?: string;
+  onClick: (e: inputMouseType) => void;
   onChange?: (e: formEl) => void;
   onFocus?: (e: focusEl) => void;
   onBlur?: (e: focusEl) => void;

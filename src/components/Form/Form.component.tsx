@@ -6,6 +6,10 @@ import { Label } from "../reusable/Label/Label.component";
 import RootContext, { RootStore } from "../../stores/rootStore";
 import styles from "./Form.module.scss";
 
+export type inputMouseType = React.MouseEvent<
+  HTMLInputElement | HTMLSelectElement
+>;
+
 const Form: React.FC = () => {
   const { infoStore } = useContext<RootStore>(RootContext);
   const {
@@ -20,12 +24,15 @@ const Form: React.FC = () => {
     handleFocus
   } = infoStore;
 
+  const stopHighlightGlobal = (e: inputMouseType) => e.stopPropagation();
+
   return (
     <div className={styles.cardForm}>
       <Input
         label="Card Number"
         name="formNumber"
         value={formNumber}
+        onClick={stopHighlightGlobal}
         onChange={handleChange}
         onFocus={handleFocus}
         addContainerStyles={["formGroup"]}
@@ -36,6 +43,7 @@ const Form: React.FC = () => {
         label="Card Holder"
         name="formName"
         value={formName}
+        onClick={stopHighlightGlobal}
         onChange={handleChange}
         onFocus={handleFocus}
         addContainerStyles={["formGroup"]}
@@ -50,6 +58,7 @@ const Form: React.FC = () => {
               name="formMonth"
               value={formMonth}
               disabled={monthOptions[0]}
+              onClick={stopHighlightGlobal}
               onChange={handleChange}
               onFocus={handleFocus}
               data={monthOptions}
@@ -59,6 +68,7 @@ const Form: React.FC = () => {
               name="formYear"
               value={formYear}
               disabled={yearOptions[0]}
+              onClick={stopHighlightGlobal}
               onChange={handleChange}
               onFocus={handleFocus}
               data={yearOptions}
@@ -70,6 +80,7 @@ const Form: React.FC = () => {
           label="CVV"
           name="formCvv"
           value={formCvv}
+          onClick={stopHighlightGlobal}
           onChange={handleChange}
           onFocus={handleFocus}
           addContainerStyles={["formGroup"]}
