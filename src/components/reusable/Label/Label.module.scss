@@ -2,6 +2,10 @@
   font-size: 0.9rem;
   color: rgb(26, 59, 93);
   padding: 5px 0;
+
+  @media only screen and (max-width: 440px) {
+    font-size: 0.8rem;
+  }
 }
 
 .cvvLabel {
@@ -9,10 +13,26 @@
   font-size: 0.9rem;
   text-align: right;
   margin: 0 10px 4px 0;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 0.7rem;
+  }
+
+  @media only screen and (max-width: 440px) {
+    font-size: 0.6rem;
+  }
 }
 
 .nameLabel {
   color: white;
   opacity: 0.7;
   font-size: 0.8rem;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 0.7rem;
+  }
+
+  @media only screen and (max-width: 440px) {
+    font-size: 0.6rem;
+  }
 }

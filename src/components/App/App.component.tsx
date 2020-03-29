@@ -10,7 +10,7 @@ export const App: React.FC = () => {
   } = useContext(RootContext);
   return (
     <div onClick={resetGlobalHighlight} className={styles.appContainer}>
-      <div className={styles.cardContainer}>
+      <div className={styles.appInnerContainer}>
         <Card />
         <Form />
       </div>

@@ -8,6 +8,20 @@
   margin-top: -40px;
   perspective: 1000px;
   opacity: 0.99;
+
+  @media only screen and (max-width: 550px) {
+    height: 240px;
+    max-width: 375px;
+  }
+
+  @media only screen and (max-width: 440px) {
+    height: 200px;
+    max-width: 315px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    top: 70px;
+  }
 }
 
 .cardInnerContainer {
@@ -81,6 +95,18 @@
   padding: 15px 80px 0 10px;
   color: white;
   font-size: 1.5rem;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: 440px) {
+    font-size: 1.1rem;
+  }
+
+  @media only screen and (max-width: 440px) {
+    font-size: 0.9rem;
+  }
 }
 
 .quarterHolder {
@@ -106,6 +132,14 @@
   font-size: 1.05rem;
   margin-top: 4px;
   text-transform: uppercase;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 0.9rem;
+  }
+
+  @media only screen and (max-width: 440px) {
+    font-size: 0.8rem;
+  }
 }
 
 .expireContainer {
@@ -123,6 +157,14 @@
   margin-top: 4px;
   text-transform: uppercase;
   letter-spacing: 1px;
+
+  @media only screen and (max-width: 550px) {
+    font-size: 0.9rem;
+  }
+
+  @media only screen and (max-width: 440px) {
+    font-size: 0.8rem;
+  }
 }
 
 .line {
