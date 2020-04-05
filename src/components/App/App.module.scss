@@ -1,6 +1,7 @@
 .appContainer {
   height: 100vh;
-  background: linear-gradient(rgb(164, 218, 238), rgb(190, 223, 235));
+  background: linear-gradient(rgba(141, 141, 141, .2), rgba(124, 124, 124, 0.2)), url('../../assets/blurred-background.jpg');
+  background-size: cover;
   display: flex;
   justify-content: center;
   padding: 10px 0;
