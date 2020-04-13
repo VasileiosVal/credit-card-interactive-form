@@ -23,7 +23,7 @@ const Card: React.FC = () => {
     applyFlip,
     cardImg,
     cardType,
-    elementHighlight
+    elementHighlight,
   } = displayStore;
 
   const animation = useAnimation([cardType], "valueEnter");
@@ -71,7 +71,7 @@ const Card: React.FC = () => {
         <Letter
           key={i}
           animate={givenName === initialName ? "initial-name" : "name"}
-          value={letter}
+          value={i >= 25 ? "." : letter}
         />
       ));
 
@@ -118,7 +118,7 @@ const Card: React.FC = () => {
         "cardPlaceholder",
         "backCardGrid",
         "cardRotate",
-        cardImg
+        cardImg,
       ])}
     >
       <div className={styles.line}></div>
