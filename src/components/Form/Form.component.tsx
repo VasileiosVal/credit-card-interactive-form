@@ -35,6 +35,7 @@ const Form: React.FC = () => {
         addContainerStyles={["formGroup"]}
         addLabelStyles={["label"]}
         addInputStyles={["inputElement", "hoverFaint"]}
+        data-testid="formNumber"
       />
       <Input
         label="Card Holder"
@@ -46,6 +47,7 @@ const Form: React.FC = () => {
         addContainerStyles={["formGroup"]}
         addLabelStyles={["label"]}
         addInputStyles={["inputElement", "hoverFaint"]}
+        data-testid="formName"
       />
       <div className={styles.inlineFormGroup}>
         <div className={styles.outerSelectGroup}>
@@ -60,6 +62,7 @@ const Form: React.FC = () => {
               onFocus={handleFocus}
               data={monthOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
+              data-testid="formMonth"
             />
             <Select
               name="formYear"
@@ -70,6 +73,7 @@ const Form: React.FC = () => {
               onFocus={handleFocus}
               data={yearOptions}
               addSelectStyles={["selectElement", "hoverFaint"]}
+              data-testid="formYear"
             />
           </div>
         </div>
@@ -83,6 +87,7 @@ const Form: React.FC = () => {
           addContainerStyles={["formGroup"]}
           addLabelStyles={["label"]}
           addInputStyles={["inputElement", "hoverFaint"]}
+          data-testid="formCvv"
         />
       </div>
       <Input

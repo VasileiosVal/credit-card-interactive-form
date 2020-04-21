@@ -9,10 +9,10 @@ export const App: React.FC = () => {
     infoStore: { resetGlobalHighlight }
   } = useContext(RootContext);
   return (
-    <div onClick={resetGlobalHighlight} className={styles.appContainer}>
+    <div onClick={resetGlobalHighlight} className={styles.appContainer} data-testid="appContainer">
       <div className={styles.appInnerContainer}>
-        <Card />
-        <Form />
+        <Card data-testid="cardComponent"/>
+        <Form data-testid="formComponent"/>
       </div>
     </div>
   );

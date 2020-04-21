@@ -93,17 +93,18 @@ const Card: React.FC = () => {
       <div className={generateClasses(["chipPlaceHolder", "chip"])}></div>
       <div
         className={generateClasses(["typeHolder", animation, cardType])}
+        data-testid="cardType"
       ></div>
       <div className={styles.number}>
-        <div className={styles.numberHolder}>{renderData("number")}</div>
+        <div className={styles.numberHolder} data-testid="numberHolder">{renderData("number")}</div>
       </div>
       <div className={styles.nameContainer}>
         <Label label="Card Holder" addLabelStyles={["nameLabel"]} />
-        <div className={styles.name}>{renderData("name")}</div>
+        <div className={styles.name} data-testid="nameHolder">{renderData("name")}</div>
       </div>
       <div className={styles.expireContainer}>
         <Label label="Expires" addLabelStyles={["nameLabel"]} />
-        <div className={styles.expire}>
+        <div className={styles.expire} data-testid="expirationHolder">
           {renderData("month")}
           <span>/</span>
           {renderData("year")}
@@ -124,19 +125,20 @@ const Card: React.FC = () => {
       <div className={styles.line}></div>
       <div className={styles.cvvContainer}>
         <Label label="CVV" addLabelStyles={["cvvLabel"]} />
-        <div className={styles.cvvOutput}>{renderData("cvv")}</div>
+        <div className={styles.cvvOutput} data-testid="cvvHolder">{renderData("cvv")}</div>
       </div>
-      <div className={generateClasses(["backTypeHolder", cardType])}></div>
+      <div className={generateClasses(["backTypeHolder", cardType])} data-testid="backCardType"></div>
     </div>
   );
 
   return (
     <div className={styles.cardOuterContainer}>
-      <div className={generateClasses(["cardInnerContainer", applyFlip])}>
+      <div className={generateClasses(["cardInnerContainer", applyFlip])} data-testid="cardInnerContainer">
         {frontCard}
         {backCard}
         <div
           className={generateClasses(["focusHighlight", elementHighlight])}
+          data-testid="elementToHighlight"
         />
       </div>
     </div>
