@@ -1,7 +1,7 @@
 # credit-card-interactive-form 
 
 A beautiful, interactive and responsive credit card form with smooth animations and beautiful ui changes.
-Original idea and credits go to [muhammederdem / vue-interactive-paycard](https://github.com/muhammederdem/vue-interactive-paycard)
+Inspired by [muhammederdem / vue-interactive-paycard](https://github.com/muhammederdem/vue-interactive-paycard)
 
 Libraries and tools that used:
 
