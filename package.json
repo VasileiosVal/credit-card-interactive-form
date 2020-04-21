@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-react-remove-properties": "^0.3.0",
     "gh-pages": "^2.2.0"
   }
 }
