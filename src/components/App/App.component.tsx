@@ -6,13 +6,17 @@ import RootContext from "../../stores/rootStore";
 
 export const App: React.FC = () => {
   const {
-    infoStore: { resetGlobalHighlight }
+    infoStore: { resetGlobalHighlight },
   } = useContext(RootContext);
   return (
-    <div onClick={resetGlobalHighlight} className={styles.appContainer} data-testid="appContainer">
+    <div
+      onClick={resetGlobalHighlight}
+      className={styles.appContainer}
+      data-testid="appContainer"
+    >
       <div className={styles.appInnerContainer}>
-        <Card data-testid="cardComponent"/>
-        <Form data-testid="formComponent"/>
+        <Card />
+        <Form />
       </div>
     </div>
   );

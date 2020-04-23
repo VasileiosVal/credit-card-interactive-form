@@ -2,10 +2,14 @@ import React from "react";
 import { render, fireEvent, screen, cleanup } from "@testing-library/react";
 import Form from "./Form.component";
 
-describe("Form Component", () => {
+describe("On Form Component", () => {
   beforeEach(() => {
     render(<Form />);
   });
+  afterEach(() => {
+    cleanup();
+  });
+
   describe("Card number input", () => {
     it("should update number input", () => {
       expect(screen.getByTestId("formNumber")).toHaveValue("");
