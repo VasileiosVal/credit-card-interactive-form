@@ -1,15 +1,15 @@
-# credit-card-interactive-form &middot; [![Build Status](https://travis-ci.com/VasileiosVal/credit-card-interactive-form.svg?branch=master)](https://travis-ci.com/VasileiosVal/credit-card-interactive-form)
+# credit-card-interactive-form &middot; [![Build Status](https://travis-ci.com/VasileiosVal/credit-card-interactive-form.svg?branch=master)](https://travis-ci.com/VasileiosVal/credit-card-interactive-form) [![Cypress.io](https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg)](https://www.cypress.io/)
 
-A beautiful, interactive and responsive credit card form with smooth animations and beautiful ui changes.
-Inspired by [muhammederdem / vue-interactive-paycard](https://github.com/muhammederdem/vue-interactive-paycard)
+A beautiful, interactive and responsive credit card form with smooth animations and beautiful ui changes. Inspired by [muhammederdem / vue-interactive-paycard](https://github.com/muhammederdem/vue-interactive-paycard)
 
 Libraries and tools that used:
 
-* **React v16.12 with Typescript**
-* **Mobx - Mobx React Lite - React Context API** as state management. Used for exercise purpopes only since the project size doesn't require an external state management library.
-* **CSS modules - Sass**
-* **Component Testing with React Testing Library**
-* **CI/CD pipeline with Travis CI**
+- **React v16.12 with Typescript**
+- **Mobx - Mobx React Lite - React Context API** as state management. Used for exercise purpopes only since the project size doesn't require an external state management library.
+- **CSS modules - Sass**
+- **Component Testing with React Testing Library**
+- **E2E Testing with Cypress**
+- **CI/CD pipeline with Travis CI**
 
 ![](card.gif)
 
@@ -33,7 +33,11 @@ You will also see any lint errors in the console.
 
 ### `npm run test`
 
-Launches the test runner in the interactive watch mode.<br />
+Launches the Test Runner in the interactive watch mode. (Tests implemented with React Testing Library)<br />
+
+### `npm run cypress`
+
+Launches the Cypress Test Runner that indicates all available e2e tests.<br />
 
 ### `npm run build`
 
