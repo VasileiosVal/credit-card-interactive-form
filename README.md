@@ -1,4 +1,4 @@
-# credit-card-interactive-form 
+# credit-card-interactive-form &middot; [![Build Status](https://travis-ci.com/VasileiosVal/credit-card-interactive-form.svg?branch=master)](https://travis-ci.com/VasileiosVal/credit-card-interactive-form)
 
 A beautiful, interactive and responsive credit card form with smooth animations and beautiful ui changes.
 Inspired by [muhammederdem / vue-interactive-paycard](https://github.com/muhammederdem/vue-interactive-paycard)
@@ -8,6 +8,8 @@ Libraries and tools that used:
 * **React v16.12 with Typescript**
 * **Mobx - Mobx React Lite - React Context API** as state management. Used for exercise purpopes only since the project size doesn't require an external state management library.
 * **CSS modules - Sass**
+* **Component Testing with React Testing Library**
+* **CI/CD pipeline with Travis CI**
 
 ![](card.gif)
 
@@ -29,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.<br />
 
