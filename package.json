@@ -23,6 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "cypress": "cypress open",
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build"
   },
@@ -43,6 +44,7 @@
   },
   "devDependencies": {
     "babel-plugin-react-remove-properties": "^0.3.0",
+    "cypress": "^4.4.1",
     "gh-pages": "^2.2.0"
   }
 }
