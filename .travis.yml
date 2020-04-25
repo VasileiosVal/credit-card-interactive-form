@@ -1,11 +1,21 @@
 language: node_js
 node_js:
   - "stable"
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
 cache:
+  npm: true
   directories:
-  - node_modules
+    - node_modules
+    - ~/.cache
+install:
+  - npm ci
 script:
   - npm run test
+  - npm start & wait-on http://localhost:3000
+  - $(npm bin)/cypress run --record
   - npm run build
 deploy:
   provider: pages
