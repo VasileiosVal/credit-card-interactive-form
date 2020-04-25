@@ -27,7 +27,7 @@ describe("On Form Component", () => {
       expect(screen.getByTestId("formNumber")).toHaveValue("59");
     });
 
-    it("should apply a space after 4 given numbers", () => {
+    it("should apply a space after 4 given digits", () => {
       expect(screen.getByTestId("formNumber")).toHaveValue("59");
       fireEvent.change(screen.getByTestId("formNumber"), {
         target: { value: 5910156 },
@@ -37,7 +37,7 @@ describe("On Form Component", () => {
   });
 
   describe("Card number CVV", () => {
-    it("shouldn't update number input if value passed isn't a number", () => {
+    it("shouldn't update CVV input if value passed isn't a number", () => {
       expect(screen.getByTestId("formCvv")).toHaveValue("");
       fireEvent.change(screen.getByTestId("formCvv"), {
         target: { value: "abc" },
