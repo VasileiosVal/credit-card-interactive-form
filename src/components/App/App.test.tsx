@@ -87,7 +87,7 @@ describe("On Card Component", () => {
       );
     });
 
-    it("should update accordingly upon change on form name input", () => {
+    it("should update accordingly upon change on form month input", () => {
       expect(screen.getByTestId("expirationHolder")).toHaveTextContent(
         initialDate
       );
@@ -132,6 +132,9 @@ describe("On Card Component", () => {
       mastercard: "mastercard",
       unionpay: "unionpay",
     };
+    const masterCardCombinationStart = "52";
+    const unioPayCombinationStart = "62";
+
     it("should start with VISA icon", () => {
       expect(screen.getByTestId("cardType")).toHaveClass(cardType.visa);
     });
@@ -139,7 +142,7 @@ describe("On Card Component", () => {
     it("should change to MASTERCARD if a combination of 5(1-5)* is entered on form number input", () => {
       expect(screen.getByTestId("cardType")).toHaveClass(cardType.visa);
       fireEvent.change(screen.getByTestId("formNumber"), {
-        target: { value: 52 },
+        target: { value: masterCardCombinationStart },
       });
       expect(screen.getByTestId("cardType")).toHaveClass(cardType.mastercard);
     });
@@ -147,7 +150,7 @@ describe("On Card Component", () => {
     it("should change to UNIONPAY if a combination of 62* is entered on form number input", () => {
       expect(screen.getByTestId("cardType")).toHaveClass(cardType.mastercard);
       fireEvent.change(screen.getByTestId("formNumber"), {
-        target: { value: 62 },
+        target: { value: unioPayCombinationStart },
       });
       expect(screen.getByTestId("cardType")).toHaveClass(cardType.unionpay);
     });
