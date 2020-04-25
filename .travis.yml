@@ -14,8 +14,8 @@ install:
   - npm ci
 script:
   - npm run test
-  - npm start & wait-on http://localhost:3000
-  - $(npm bin)/cypress run --record
+  - npm start & npx wait-on http://localhost:3000
+  - $(npm bin)/cypress run
   - npm run build
 deploy:
   provider: pages
