@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/credit-card-interactive-form/static/css/main.bd47a0e7.chunk.css",
+    "main.js": "/credit-card-interactive-form/static/js/main.afa90964.chunk.js",
+    "main.js.map": "/credit-card-interactive-form/static/js/main.afa90964.chunk.js.map",
+    "runtime-main.js": "/credit-card-interactive-form/static/js/runtime-main.1423e89c.js",
+    "runtime-main.js.map": "/credit-card-interactive-form/static/js/runtime-main.1423e89c.js.map",
+    "static/js/2.aea694c4.chunk.js": "/credit-card-interactive-form/static/js/2.aea694c4.chunk.js",
+    "static/js/2.aea694c4.chunk.js.map": "/credit-card-interactive-form/static/js/2.aea694c4.chunk.js.map",
+    "index.html": "/credit-card-interactive-form/index.html",
+    "precache-manifest.5c42de6500c12c5a785aa08b45663ca6.js": "/credit-card-interactive-form/precache-manifest.5c42de6500c12c5a785aa08b45663ca6.js",
+    "service-worker.js": "/credit-card-interactive-form/service-worker.js",
+    "static/css/main.bd47a0e7.chunk.css.map": "/credit-card-interactive-form/static/css/main.bd47a0e7.chunk.css.map",
+    "static/js/2.aea694c4.chunk.js.LICENSE.txt": "/credit-card-interactive-form/static/js/2.aea694c4.chunk.js.LICENSE.txt",
+    "static/media/Card.module.scss": "/credit-card-interactive-form/static/media/unionpay.40ead9ad.png",
+    "static/media/App.module.scss": "/credit-card-interactive-form/static/media/blurred-background.05811190.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1423e89c.js",
+    "static/js/2.aea694c4.chunk.js",
+    "static/css/main.bd47a0e7.chunk.css",
+    "static/js/main.afa90964.chunk.js"
+  ]
+}
