@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "babel-plugin-react-remove-properties": "^0.3.0",
-    "cypress": "^4.4.1",
+    "cypress": "^4.12.1",
     "gh-pages": "^2.2.0"
   }
 }
